@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@phalco/modules/auth": ["modules/auth/src/index.ts"]
+      "@phalco/modules/auth": ["modules/auth/src/index.ts"],
+      "@phalco/modules/shared/ui": ["modules/shared/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
