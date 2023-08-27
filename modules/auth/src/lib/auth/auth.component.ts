@@ -23,7 +23,7 @@ export class AuthComponent implements OnInit {
 
   ngOnInit(): void {
     this.weatherForecast$ = this.http.get<Forecast[]>(
-      'http://gateways.users.phalco.africa/weatherforecast'
+      'https://gateways.users.phalco.africa/weatherforecast'
     );
   }
 }
