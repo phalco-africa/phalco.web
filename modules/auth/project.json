@@ -1,8 +1,8 @@
 {
-  "name": "modules-auth",
+  "name": "auth",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "modules/auth/src",
-  "prefix": "lib",
+  "prefix": "phalco",
   "tags": ["type:feature", "scope:auth"],
   "projectType": "library",
   "targets": {
@@ -10,18 +10,11 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "modules/auth/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
+        "jestConfig": "modules/auth/jest.config.ts"
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["modules/auth/**/*.ts", "modules/auth/**/*.html"]

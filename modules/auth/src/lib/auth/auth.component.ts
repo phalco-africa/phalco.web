@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { RouterOutlet } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+
+import { Observable } from 'rxjs';
+
 
 export interface Forecast {
   date: string;
@@ -10,8 +12,8 @@ export interface Forecast {
   summary: string;
   temperatureF: number;
 }
+
 @Component({
-  selector: 'lib-auth',
   standalone: true,
   imports: [CommonModule, RouterOutlet],
   templateUrl: './auth.component.html',
@@ -20,7 +22,7 @@ export interface Forecast {
 export class AuthComponent implements OnInit {
   weatherForecast$!: Observable<Forecast[]>;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.weatherForecast$ = this.http.get<Forecast[]>(

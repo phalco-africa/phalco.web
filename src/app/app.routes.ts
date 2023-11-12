@@ -11,6 +11,6 @@ export const appRoutes: Route[] = [
   {
     path: 'auth',
     loadChildren: () =>
-      import('@phalco/modules/auth').then((m) => m.AUTH_ROUTES),
+      import('@phalco/auth').then((m) => m.AUTH_ROUTES),
   },
 ];
