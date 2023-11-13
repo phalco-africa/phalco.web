@@ -5,7 +5,6 @@ import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 
-
 export interface Forecast {
   date: string;
   temperatureC: number;
@@ -16,10 +15,10 @@ export interface Forecast {
 @Component({
   standalone: true,
   imports: [CommonModule, RouterOutlet],
-  templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.css'],
+  templateUrl: './layout.component.html',
+  styleUrls: ['./layout.component.scss'],
 })
-export class AuthComponent implements OnInit {
+export class LayoutComponent implements OnInit {
   weatherForecast$!: Observable<Forecast[]>;
 
   constructor(private http: HttpClient) { }
