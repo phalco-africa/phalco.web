@@ -3,11 +3,9 @@ import { RouterModule } from '@angular/router';
 
 import { initFlowbite } from 'flowbite';
 
-
-import { NxWelcomeComponent } from './nx-welcome.component';
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [RouterModule],
   selector: 'phalco-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],

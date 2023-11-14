@@ -1,12 +1,14 @@
 import { Route } from '@angular/router';
 
-import { NxWelcomeComponent } from './nx-welcome.component';
-
 export const appRoutes: Route[] = [
   {
     path: '',
-    component: NxWelcomeComponent,
-    pathMatch: 'full',
+    loadComponent: () =>
+      import('./@common/layouts/main/main.component').then(
+        (m) => m.MainComponent
+      ),
+    loadChildren: () =>
+      import('./@common/layouts/main/routes'),
   },
   {
     path: 'auth',

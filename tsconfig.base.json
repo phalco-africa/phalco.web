@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@phalco/auth": ["modules/auth/src/index.ts"]
+      "@phalco/auth": ["modules/auth/src/index.ts"],
+      "@phalco/elections": ["modules/elections/src/index.ts"],
+      "@phalco/home": ["modules/home/src/index.ts"],
+      "@phalco/team": ["modules/team/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
