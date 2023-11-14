@@ -1,10 +1,1 @@
-<p>auth works!</p>
-
-<h4>Weather Forecast</h4>
-
-<ul *ngIf="weatherForecast$ | async as forecasts">
-    <li *ngFor="let forecast of forecasts">{{forecast.date | date}}: {{forecast.temperatureC}}C,
-        {{forecast.temperatureF}}F, summary: {{forecast.summary}}</li>
-</ul>
-
 <router-outlet></router-outlet>
