@@ -18,7 +18,11 @@
       "@phalco/auth": ["modules/auth/src/index.ts"],
       "@phalco/elections": ["modules/elections/src/index.ts"],
       "@phalco/home": ["modules/home/src/index.ts"],
-      "@phalco/team": ["modules/team/src/index.ts"]
+      "@phalco/shared/data-access": ["modules/shared/data-access/src/index.ts"],
+      "@phalco/team": ["modules/team/src/index.ts"],
+      "@app/*": ["src/app/*"],
+      "@common/*": ["src/app/@common/*"],
+      "@env/*": ["src/environments/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
