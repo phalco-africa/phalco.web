@@ -76,7 +76,7 @@ export class NxWelcomeComponent implements OnInit {
         initFlowbite();
 
         this.weatherForecast$ = this.http.get<Forecast[]>(
-            'https://gateways.users.phalco.africa/wesatherforecast'
+            'https://gateways.users.phalco.africa/weatherforecast'
         );
     }
 }

@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-import { AuthService, LoginRequest } from '@phalco/shared/data-access';
+import { initFlowbite } from 'flowbite';
 import { lastValueFrom, timer } from 'rxjs';
+
+import { AuthService, LoginRequest } from '@phalco/shared/data-access';
 
 @Component({
   standalone: true,
@@ -12,18 +14,23 @@ import { lastValueFrom, timer } from 'rxjs';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   model: LoginRequest = {
     email: '',
     password: '',
     rememberMe: false
   };
+  togglePasswordButton = { "target": "#password" };
 
   loading = false;
   message?: string | null;
   success = false;
 
   constructor(private router: Router, private auth: AuthService) { }
+
+  ngOnInit() {
+    initFlowbite();
+  }
 
   async onSubmit() {
     this.loading = true;
