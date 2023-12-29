@@ -8,26 +8,25 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 
 import { provideToastr } from 'ngx-toastr';
 
-import { ToastComponent } from './@common/components/toast/toast.component';
 import { tokenInterceptor } from './@common/interceptors/token.interceptor';
-// import { ErrorInterceptor } from './@common/interceptors/error.interceptor';
+import { errorInterceptor } from './@common/interceptors/error.interceptor';
 
 import { appRoutes } from './app.routes';
+
+import { ToastComponent } from './@common/components/toast/toast.component';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(appRoutes, withEnabledBlockingInitialNavigation()),
-
-    provideHttpClient(
-      // withInterceptorsFromDi(),
-      withInterceptors([
-        tokenInterceptor
-      ])),
-    // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-
     provideAnimations(),
     provideToastr({
       toastComponent: ToastComponent
     }),
+    provideHttpClient(
+      withInterceptors([
+        tokenInterceptor,
+        errorInterceptor
+      ])
+    ),
   ],
 };
