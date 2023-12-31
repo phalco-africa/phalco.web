@@ -3,3 +3,14 @@
 @tailwind utilities;
 
 /* You can add global styles to this file, and also import other style files */
+
+@layer components {
+  .ng-invalid[required].ng-touched,
+  .ng-invalid.required {
+    @apply bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-sm rounded-lg focus:ring-red-500 dark:bg-gray-700 focus:border-red-500 block w-full p-2.5 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500;
+  }
+
+  label.error-label {
+    @apply block mb-2 text-sm font-medium text-red-700 dark:text-red-500;
+  }
+}

@@ -7,6 +7,7 @@ import { initFlowbite } from 'flowbite';
 import { lastValueFrom, timer } from 'rxjs';
 
 import { AuthService, LoginRequest } from '@phalco/shared/data-access';
+
 @Component({
   standalone: true,
   imports: [CommonModule, FormsModule, RouterLink],
@@ -19,7 +20,6 @@ export class LoginPage implements OnInit {
     password: '',
     rememberMe: false
   };
-  togglePasswordButton = { "target": "#password" };
 
   loading = false;
   message?: string | null;

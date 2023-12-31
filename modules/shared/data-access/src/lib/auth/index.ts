@@ -1,3 +1,3 @@
-export * from './models/login.model';
+export * from './models'
 
 export * from './auth.service';

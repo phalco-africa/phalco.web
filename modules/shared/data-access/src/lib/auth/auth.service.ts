@@ -8,6 +8,7 @@ import { environment } from '@env/environment';
 
 import { Response } from '../@common';
 import { LoginRequest, LoginResponse } from './models/login.model';
+import { RegisterRequest, RegisterResponse } from './models';
 
 
 
@@ -43,6 +44,24 @@ export class AuthService {
 
   login(payload: LoginRequest) {
     return this.http.post<Response<LoginResponse>>(`${environment.baseUrl}/Auth/Login`, payload)
+      .pipe(
+        tap(res => {
+          if (res?.success && res.data?.accessToken) {
+            this.storeToken(res.data.accessToken);
+          }
+        }),
+        catchError(e => {
+          if (!(e instanceof Error)) {
+            return throwError(() => new Error(e.error.message));
+          }
+
+          throw e;
+        })
+      );
+  }
+
+  register(payload: RegisterRequest) {
+    return this.http.post<Response<RegisterResponse>>(`${environment.baseUrl}/Auth/Register`, payload)
       .pipe(
         tap(res => {
           if (res?.success && res.data?.accessToken) {
