@@ -7,14 +7,13 @@ import { initFlowbite } from 'flowbite';
 import { lastValueFrom, timer } from 'rxjs';
 
 import { AuthService, LoginRequest } from '@phalco/shared/data-access';
-
 @Component({
   standalone: true,
   imports: [CommonModule, FormsModule, RouterLink],
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  templateUrl: './login.page.html',
+  styles: ``
 })
-export class LoginComponent implements OnInit {
+export class LoginPage implements OnInit {
   model: LoginRequest = {
     email: '',
     password: '',

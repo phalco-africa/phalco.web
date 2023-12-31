@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'phalco-phone',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './phone.component.html',
-  styleUrls: ['./phone.component.scss'],
+  templateUrl: './register.page.html',
+  styles: ``
 })
-export class PhoneComponent {}
+export class RegisterPage {
+
+}
