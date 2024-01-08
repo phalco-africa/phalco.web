@@ -39,6 +39,13 @@ export const AUTH_ROUTES = [
           ),
       },
       {
+        path: 'verification/email',
+        loadComponent: () =>
+          import('./verification/email/email.page').then(
+            (m) => m.EmailPage
+          ),
+      },
+      {
         path: 'verify/phone',
         loadComponent: () =>
           import('./verify/phone/phone.page').then(
